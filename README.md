@@ -23,25 +23,26 @@ Below is the Dockerfile with explanations for each instruction:
 
 ```dockerfile
 # Start from the official Node.js image
-FROM node:18
+FROM node
 
 # Set the working directory in the container
 WORKDIR /app
 
 # Copy package.json and package-lock.json first for better caching
-COPY package*.json ./
+COPY package.json /app
 
 # Install dependencies
 RUN npm install
 
 # Copy the rest of the application code
-COPY . .
+COPY . /app
 
 # The application listens on port 80
 EXPOSE 80
 
 # Command to run when the container starts
 CMD ["node", "server.js"]
+
 
 ```
 ## Building Image and Running the Container
