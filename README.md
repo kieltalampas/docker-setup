@@ -50,15 +50,13 @@ CMD ["node", "server.js"]
 
 ```dockerfile
 # Navigate to the directory containing the Dockerfile
-Run `cd /path/to/project`
+`cd /path/to/project`
 
 
 # Build the image
 `docker build .`
 
 # Run the Container
-# Open a new terminal
-# Run the container with port mapping
 `docker run -p 3000:80 <image id>`
 
 #The command explained:
@@ -77,3 +75,23 @@ a1b2c3d4e5f6   1f3e4b5c6d7e   "node server.js"         2 minutes ago    Up 2 min
 
 # Stop the container using its name
 `docker stop <container name>`
+
+
+```
+## Remove Container
+```dockerfile
+# Stop running Containers to remove
+`docker rm <container name/s>`
+
+# automatically remove container after being stop `--rm`
+`docker run -p 3000:90 -d --rm <imageid>
+
+
+```
+## Remove Images
+```dockerfile
+# List all images
+`docker images`
+
+# Remove Images only if the container has been removed
+`docker rmi <container name>
