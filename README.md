@@ -95,3 +95,21 @@ a1b2c3d4e5f6   1f3e4b5c6d7e   "node server.js"         2 minutes ago    Up 2 min
 
 # Remove Images only if the container has been removed
 `docker rmi <container name>
+
+```
+## Naming Containers
+```dockerfile
+# Build image
+`docker build .`
+
+# Run the container
+`docker run -p 3000:80 -d --name <container name> <imageid>`
+
+
+```
+## Naming Images
+```dockerfile
+# Build image with -t
+`docker build -t goals:latest .`
+
+
